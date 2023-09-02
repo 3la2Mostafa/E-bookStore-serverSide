@@ -22,7 +22,11 @@ const reviewRouter = require('./routers/reviewRouter');
 
 
 app.use(express.json())
-app.use(cors())
+// app.use(cors())
+// Enable CORS for your frontend domain
+app.use(cors({
+      origin: 'https://alef-book-store.netlify.app/',
+}));
 
 app.use('/admins',  adminRouter);
 app.use('/admin', manageRouter);
