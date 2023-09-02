@@ -25,7 +25,7 @@ app.use(express.json())
 // app.use(cors())
 // Enable CORS for your frontend domain
 app.use(cors({
-      origin: 'https://alef-book-store.netlify.app/',
+      origin: 'https://alef-book-store.netlify.app',
 }));
 
 app.use('/admins',  adminRouter);
