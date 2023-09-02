@@ -45,14 +45,14 @@ require('dotenv').config();
 //------------------------------------dy-//
 
 
-var connectionString = 'mongodb+srv://ellol:vqnWuRTZlgZ7HhR4@alef-cluster.xt2vp4y.mongodb.net/alef-database';
+var connectionString = process.env.DB_CONNECTION_STRING;
 mongoose.connect(connectionString).then(() => {
       console.log('Connected to MongoDB Atlas successfully');
 }).catch((error) => console.error(error));
 
 
 // Start the server
-const port = 3001;
+const port = process.env.PORT || 3001;
 app.listen(port, () => {
       console.log(`Server started successfully on port ${port}`);
 });
